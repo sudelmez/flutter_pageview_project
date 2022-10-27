@@ -32,8 +32,8 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          PreviousPage(),
-          NextPage(),
+          ButtonBuild(Pagecontroller: _Pagecontroller, cmt: false),
+          ButtonBuild(Pagecontroller: _Pagecontroller, cmt: true),
         ],
       ),
       body: PageView(
@@ -54,20 +54,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    );
-  }
-
-  Padding NextPage() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ButtonNext(Pagecontroller: _Pagecontroller),
-    );
-  }
-
-  Padding PreviousPage() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ButtonPrevious(Pagecontroller: _Pagecontroller),
     );
   }
 }
