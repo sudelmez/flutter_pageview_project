@@ -13,10 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: HomePage(),
       theme: ThemeData.light().copyWith(
-          appBarTheme: AppBarTheme(
-              titleTextStyle: TextStyle(color: Colors.black),
-              centerTitle: true,
-              backgroundColor: Colors.transparent)),
+        appBarTheme: AppBarTheme(
+            titleTextStyle: TextStyle(color: Colors.black),
+            centerTitle: true,
+            backgroundColor: Colors.transparent),
+      ),
     );
   }
 }

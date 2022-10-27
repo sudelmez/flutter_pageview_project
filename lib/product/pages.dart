@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pageview_project/core/component/textproduct.dart';
 
 class ShowPage extends StatelessWidget {
   const ShowPage({
@@ -13,21 +12,42 @@ class ShowPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var assetName = 'assets/avatar.png';
-    return Container(
-      child: Column(
+    return Scaffold(
+      body: Column(
         children: [
           Padding(
             padding: EdgeInsets.all(8.0),
             child: Image(image: AssetImage(assetName)),
           ),
-          Headline(
-            sentence: sentence1,
-          ),
-          Comment(
-            sentence: sentence2,
-          ),
+          HeadlineText(),
+          CommentText(),
         ],
       ),
     );
   }
+
+  Padding CommentText() {
+    return Padding(
+      padding: EdgeInsets.all(6.0),
+      child: Text(sentence2,
+          style: TextStyle(
+              fontWeight: FontWeight.w300, fontStyle: FontStyle.italic)),
+    );
+  }
+
+  Padding HeadlineText() {
+    return Padding(
+      padding: _EdgeIns.sekiz,
+      child: Text(
+        sentence1,
+        textAlign: TextAlign.center,
+        maxLines: 2,
+        style: TextStyle(fontSize: 30),
+      ),
+    );
+  }
+}
+
+mixin _EdgeIns {
+  static const sekiz = EdgeInsets.all(8.0);
 }
